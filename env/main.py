@@ -8,7 +8,7 @@ weather = response.json()
 
 # Set up Kafka producer app
 app = Application(
-    broker_address="192.168.56.1:9092",
+    broker_address="localhost:9092",
     loglevel="DEBUG",
 )
 
@@ -20,3 +20,4 @@ with app.get_producer() as producer:
         key="tokyo",
         value=json.dumps(temperature_data),
     )
+#now working with consumer
